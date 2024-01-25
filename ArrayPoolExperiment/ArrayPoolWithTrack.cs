@@ -42,7 +42,7 @@ public sealed class ArrayPoolWithTracking<T> : ArrayPoolMock<T>
         var stackTrace = new StackTrace();
         Console.WriteLine("Possible double return array to pool");
         Console.WriteLine(stackTrace);
-        if (Debugger.IsAttached) Debugger.Break();
+        // if (Debugger.IsAttached) Debugger.Break();
         // we won't return this array to pool, just in case
         return;
       }

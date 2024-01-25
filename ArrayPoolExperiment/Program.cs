@@ -11,7 +11,8 @@ public static class Program
   {
     var arr = ArrayPoolMock<byte>.Shared.Rent(1024);
     ArrayPoolMock<byte>.Shared.Return(arr); // ok
-    ArrayPoolMock<byte>.Shared.Return(arr); // should output message and break (in debug)
+    ArrayPoolMock<byte>.Shared.Return(arr); // should output message
+    
     BenchmarkRunner.Run<Test>();
   }
 }

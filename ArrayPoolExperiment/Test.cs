@@ -7,7 +7,7 @@ namespace ArrayPoolExperiment;
 [MemoryDiagnoser]
 [SimpleJob(invocationCount: 10000000)]
 [Orderer(SummaryOrderPolicy.FastestToSlowest)]
-[DisassemblyDiagnoser]
+// [DisassemblyDiagnoser]
 public class Test
 {
   [Benchmark] public void StandardTest()
