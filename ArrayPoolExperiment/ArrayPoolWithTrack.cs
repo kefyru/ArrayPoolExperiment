@@ -5,9 +5,9 @@ using System.Runtime.InteropServices;
 
 namespace ArrayPoolExperiment;
 
-public sealed class ArrayPoolWithTracking<T> : ArrayPoolMock<T>
+public sealed class ArrayPoolWithTracking<T> : ArrayPool<T>
 {
-  private static readonly ArrayPoolMock<T> s_default;
+  private static readonly ArrayPool<T> s_default;
   private static readonly long             s_hash = Random.Shared.NextInt64();
   
   static ArrayPoolWithTracking()

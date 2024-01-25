@@ -13,13 +13,13 @@ public class Test
   [Benchmark] public void StandardTest()
   {
     var arr = ArrayPool<byte>.Shared.Rent(1024);
-    ArrayPool<byte>.Shared.Return(arr);
+    System.Buffers.ArrayPool<byte>.Shared.Return(arr);
   }
   
   [Benchmark] public void MockTest()
   {
-    var arr = ArrayPoolMock<byte>.Shared.Rent(1024);
-    ArrayPoolMock<byte>.Shared.Return(arr);
+    var arr = ArrayPool<byte>.Shared.Rent(1024);
+    ArrayPool<byte>.Shared.Return(arr);
   }
   
 }
