@@ -10,9 +10,16 @@ namespace ArrayPoolExperiment;
 // [DisassemblyDiagnoser]
 public class Test
 {
+  // on macbook pro M1
+  // | Method       | Mean     | Error    | StdDev   | Allocated |
+  // |------------- |---------:|---------:|---------:|----------:|
+  // | StandardTest | 10.76 ns | 0.029 ns | 0.025 ns |         - |
+  // | MockTest     | 11.24 ns | 0.018 ns | 0.015 ns |         - |
+
+  
   [Benchmark] public void StandardTest()
   {
-    var arr = ArrayPool<byte>.Shared.Rent(1024);
+    var arr = System.Buffers.ArrayPool<byte>.Shared.Rent(1024);
     System.Buffers.ArrayPool<byte>.Shared.Return(arr);
   }
   
